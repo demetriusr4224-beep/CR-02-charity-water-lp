@@ -5,14 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Charity: Water - You Can Change the World</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Use Google Fonts for Avenir-like font as a fallback, since Proxima Nova is not free on Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+    <style>
+        /* Beginner-friendly: Widen the margins of the whole page */
+        body {
+            /* Use Proxima Nova if available, then Avenir, then Montserrat, Arial, sans-serif */
+            font-family: 'Proxima Nova', 'Avenir', 'Montserrat', Arial, sans-serif;
+            margin-left: 40px;
+            margin-right: 40px;
+        }
+        /* Make the main content paragraph in the blue section use Avenir font */
+        .main-content p {
+            font-family: 'Avenir', 'Montserrat', Arial, sans-serif;
+        }
+        @media (max-width: 600px) {
+            body {
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Header Section: Shows the logo at the top of the page -->
-    <header class="header">
-        <div class="container">
-            <div class="logo">
-                <!-- Use the cw_logo-2.png image as the logo -->
-                <img src="img/cw_logo-2.png" alt="charity: water logo" style="height:40px;">
+    <header class="header" style="background-color: #F4C842; width: 100vw; margin-left: -40px; margin-right: -40px; padding: 0;">
+        <div class="container" style="width: 100%; padding: 0; margin: 0;">
+            <div class="logo" style="display: flex; align-items: center; justify-content: flex-start; padding: 0 0 0 20px;">
+                <!-- Use the cBlack_CW_logoCropped.png image as the logo -->
+                <img src="img/cBlack_CW_logoCropped.png" alt="charity: water logo" style="height:80px;">
                 <!-- Logo text -->
                 <span 
             </div>
@@ -21,32 +42,34 @@
 
     <!-- Hero Section: Main banner with background image -->
     <!-- 
-      The hero section now shows the entire Main_Background.png image.
+      The hero section now shows the entire Main_Backround 2.png image.
       Content is centered on top of the image.
     -->
-    <section class="hero">
-        <div class="hero-content">
-            <div class="hero-text">
-                <!-- Main headline -->
-                <h1>YOU Can Change the World (Starting with Water)</h1>
-                <!-- Subheadline -->
-                <p>Join a global movement of students and change makers bringing clean water to every community</p>
-                <!-- Donate button -->
-                <button class="cta-button">DONATE</button>
-            </div>
-            <div class="hero-image">
-                <!-- Hero image with no alt text wording -->
-                <img src="https://via.placeholder.com/600x400/87CEEB/000000?text=Happy+Family+by+Tree" alt="">
+    <section class="hero" style="position: relative; background: url('img/Main_Background_2.jpeg') no-repeat center top fixed; background-size: cover;">
+        <!-- Overlay removed for a clear image -->
+        <div class="hero-content" style="width: 100%; min-height: 400px; position: relative; z-index: 2; display: block; text-align: left;">
+            <!-- Move h1/h2 text box and CTA button to the left, but keep them center aligned within the box -->
+            <div class="hero-text" style="width: 400px; display: block; text-align: center; margin: 120px 0 0 40px; color: #FFC907; padding: 0 0 20px 0; border-radius: 0; position: relative; z-index: 2;">
+                <!-- Main headline centered in the text box -->
+                <h1 style="font-size:2rem; color:#FFC907; margin-bottom:10px; text-align:center;">YOU Can Change the World (Starting with Water)</h1>
+                <!-- Subheadline centered in the text box -->
+                <p style="font-size:1.2rem; color:#FFC907; text-align:center;">Join a global movement of students and change makers bringing clean water to every community</p>
+                <!-- CTA button centered below the text -->
+                <div style="text-align:center;">
+                  <button class="cta-button" style="font-size:2rem; padding: 30px 60px; margin-top: 10px; display: inline-block;">DONATE</button>
+                </div>
             </div>
         </div>
+        <div style="clear: both;"></div>
+        <!-- Remove the hero-image div, as the background image is now set on the section -->
     </section>
 
     <!-- Main Content Section: Information about the nonprofit and a subscribe button -->
-    <section class="main-content">
+    <section class="main-content" style="background-color: #2E5B9B; width: 100vw; margin-left: -40px; margin-right: -40px;">
         <div class="content-wrapper">
             <div class="content-image">
-                <!-- Image of a person with water container -->
-                <img src="https://via.placeholder.com/300x400/8B4513/FFFFFF?text=Person+with+Water+Container" alt="Person with water container">
+                <!-- Replace placeholder with Main_content.png -->
+                <img src="img/Main_content.png" alt="Main content image">
             </div>
             <div class="content-text">
                 <!-- Description of the nonprofit's mission -->
@@ -58,21 +81,28 @@
     </section>
 
     <!-- Footer Section: Contact information and social media -->
-    <footer class="footer">
+    <footer class="footer" style="background-color: #222; width: 100vw; margin-left: -40px; margin-right: -40px;">
         <div class="footer-content">
             <div class="footer-section">
                 <h3>CONTACT US</h3>
-                <p>(123) 456 7890</p>
-                <p>hello@reallygreatsite.com</p>
+                <!-- Phone number link with confirmation popup -->
+                <p>
+                  <a href="#" onclick="if(confirm('Do you want to call 1 (646) 688-2323?')){window.location.href='tel:+16466882323';}return false;" style="color: #2E9DF7; text-decoration: underline;">1 (646) 688-2323</a>
+                </p>
+                <!-- Website link -->
+                <p>
+                  <a href="https://www.charitywater.org/contact" target="_blank" style="color: #2E9DF7; text-decoration: underline;">https://www.charitywater.org/contact</a>
+                </p>
             </div>
             <div class="footer-section">
-                <h3>OUR LOCATION</h3>
-                <p>123 Anywhere St., Any City</p>
-                <p>State, Country 12345</p>
+                <h3>OUR HQ</h3>
+                <p style="color: #2E9DF7; text-decoration: underline;">40 Worth Street, Suite 330, New York, NY 10013, U.S.</p>
             </div>
             <div class="footer-section">
                 <h3>FOLLOW US ON IG & FB</h3>
-                <p>@reallygreatsite</p>
+                <p>
+                  <a href="https://www.instagram.com/charitywater/" target="_blank" style="color: #2E9DF7; text-decoration: underline;">https://www.instagram.com/charitywater/</a>
+                </p>
             </div>
         </div>
     </footer>
